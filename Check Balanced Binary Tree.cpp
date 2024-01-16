@@ -22,7 +22,7 @@ int height(Node *root)
     int rh = height(root->right);
     return 1 + max(lh, rh);
 }
-bool isBalanced(Node *root)
+bool isBalanced(Node *root) // Time Complexity Of this Code is O(n*n);
 {
     if (root == NULL)
         return true;
@@ -38,6 +38,23 @@ bool isBalanced(Node *root)
         return false;
     }
 }
+int height2(Node *root)
+{
+    if (root == NULL)
+        return 0;
+    int lh = height2(root->left);
+    int rh = height2(root->right);
+    if (lh == -1 || rh == -1)
+        return -1;
+    if (abs(lh - rh) > 1)
+        return -1;
+    return 1 + max(lh, rh);
+}
+bool isBalanced2(Node *root)  // Time Complexity Of this code is O(n)
+{
+    return height2(root) != -1;
+}
+
 int main()
 {
     struct Node *root = new Node(1);
@@ -47,7 +64,7 @@ int main()
     root->left->left = new Node(4);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
-    if (isBalanced(root))
+    if (isBalanced2(root))
         cout << "Tree is Balanced";
     else
         cout << "Tree is Unbalanced";
