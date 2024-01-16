@@ -41,8 +41,10 @@ void addLeaf(Node *root, vector<int> &res)
 {
     // Adds the leaf nodes to the result vector
     if (isLeaf(root))
+{
         res.push_back(root->data);
-    return;
+        return;
+}
     if (root->left)
         addLeaf(root->left, res);
     if (root->right)
