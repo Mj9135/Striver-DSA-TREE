@@ -14,7 +14,7 @@ struct Node
         left = right = NULL;
     }
 };
-// Function of  level order Traversal
+// Function of  level Traversal
 void levelOrder(struct Node *root, vector<int> &ans)
 {
     queue<Node *> q;
