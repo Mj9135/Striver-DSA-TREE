@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Basic structure Of Tree Declaration
+// Basic structure of Tree Declaration
 struct Node
 {
     int data;
